@@ -1,11 +1,10 @@
-const names = ["Hassan", "Ibrahim", "Jafar"];
 
-const Post = () => {
-  const chosenRand = Math.random() > 0.3 ? names[0] : names[2];
+const Post = ({name, value}) => {
+ 
     return ( 
     <div>
-      <p>{chosenRand}</p>
-      <p>React Js is Awesome!</p>
+      <p>{name}</p>
+      <h3>{value}</h3>
     </div>
    );
 }
