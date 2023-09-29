@@ -2,10 +2,10 @@ import classes from "./Post.module.css"
 const Post = ({name, value}) => {
  
     return ( 
-    <div className={classes.Post}>
+    <li className={classes.post}>
       <p className={classes.author}>{name}</p>
-      <h3 className={classes.text}>{value}</h3>
-    </div>
+    <h3 className={classes.text}>{value}</h3>
+    </li>
    );
 }
  
