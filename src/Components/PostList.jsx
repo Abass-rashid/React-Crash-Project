@@ -4,8 +4,7 @@ import classes from "./PostList.module.css"
 import NewPost from "./NewPost";
 import Modal from "./Modal";
 
-const PostList = () => {
-  const [modalIsVisible, setModalIsVisible] = useState(true)
+const PostList = ({isPosting,onStopPosting}) => {
   const [enteredBody, setEnteredBody] = useState("")
   const [enteredAuther, setEnteredAuther] = useState("");
   const handleChange = (event) => {
@@ -14,13 +13,11 @@ const PostList = () => {
   const handleAuther = (event) => {
     setEnteredAuther(event.target.value)
 }
-const handleModalHide = () => {
-  setModalIsVisible(false)
-}
+
   return ( 
     <>
-    {modalIsVisible && (
-     <Modal onModal={handleModalHide}>
+    {isPosting && (
+     <Modal onModal={onStopPosting}>
      <NewPost  handleChange={handleChange} 
     onAutherChange={handleAuther} />
       </Modal> ) } 
