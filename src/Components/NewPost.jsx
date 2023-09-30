@@ -1,6 +1,6 @@
 
 import classes from "./NewPost.module.css"
-const NewPost = ({handleChange,onAutherChange}) => {
+const NewPost = ({handleChange,onAutherChange,onCancel}) => {
  
   return (
     <form className={classes.form}>
@@ -11,6 +11,10 @@ const NewPost = ({handleChange,onAutherChange}) => {
        <p>
         <label htmlFor="body">Your Name.</label>
         <input id="name"  type="text"  required onChange={onAutherChange}/>
+       </p>
+       <p className={classes.actions}>
+        <button type="button" onClick={onCancel}>Cancel</button>
+        <button>Submit</button>
        </p>
     </form>
     );

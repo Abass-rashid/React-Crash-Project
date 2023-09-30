@@ -19,7 +19,8 @@ const PostList = ({isPosting,onStopPosting}) => {
     {isPosting && (
      <Modal onModal={onStopPosting}>
      <NewPost  handleChange={handleChange} 
-    onAutherChange={handleAuther} />
+    onAutherChange={handleAuther} 
+    onCancel={onStopPosting}/>
       </Modal> ) } 
     
       <ul className={classes.posts}>   
