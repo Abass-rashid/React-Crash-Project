@@ -5,30 +5,24 @@ import NewPost from "./NewPost";
 import Modal from "./Modal";
 
 const PostList = ({isPosting,onStopPosting}) => {
-  const [enteredBody, setEnteredBody] = useState("")
-  const [enteredAuther, setEnteredAuther] = useState("");
-  const handleChange = (event) => {
-    setEnteredBody(event.target.value)
-}
-  const handleAuther = (event) => {
-    setEnteredAuther(event.target.value)
-}
-
+ 
+const [post, setPost] = useState([])
+  const postHandler = (PostData) => {
+    setPost((existingPost)=>[PostData, ...existingPost])
+  }
   return ( 
     <>
     {isPosting && (
      <Modal onModal={onStopPosting}>
-     <NewPost  handleChange={handleChange} 
-    onAutherChange={handleAuther} 
-    onCancel={onStopPosting}/>
+     <NewPost 
+    onCancel={onStopPosting}  onAddPost={postHandler}/>
       </Modal> ) } 
-    
       <ul className={classes.posts}>   
-   <Post name ="Abasss rashid"  value="am learning React!"  /> 
-   <Post name ={enteredAuther} value= {enteredBody}  />    
-   <Post name ="Hussein Osman"  value="I love Python js"  />   
-     
-   </ul></>
+      {post.map((item)=><Post author={item.author} body ={item.body}/>,
+      console.log(post))}
+   </ul>
+   
+   </>
 
    );
 }
