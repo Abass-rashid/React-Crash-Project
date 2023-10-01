@@ -1,7 +1,7 @@
 .form {
   background-color: #6233b9;
   padding: 2rem;
-  width: 20rem;
+  width: 40rem;
 }
 
 .form label {
@@ -14,7 +14,7 @@
 .form input,
 .form textarea {
   display: block;
-  width: 90%;
+  width: 100%;
   font: inherit;
   padding: 0.5rem;
   border-radius: 6px;
