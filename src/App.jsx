@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MainHeader from "./Components/MainHeader";
 import PostList from "./Components/PostList";
+import {RouterProvider} from "react-router-dom"
 
 const App = () => {
   const [modalIsVisible, setModalIsVisible] = useState(false)

@@ -11,7 +11,7 @@ const MainHeader = ({ onCreatePost }) => {
       </h1>
       <p>
         <button className={classes.button} onClick={onCreatePost}>
-          <MdPostAdd size={18} />
+          <MdPostAdd size={20} />
           New Post
         </button>
       </p>
